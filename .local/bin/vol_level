@@ -1,0 +1,3 @@
+#!/bin/sh
+killall -q herbe
+herbe $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{printf $5}')

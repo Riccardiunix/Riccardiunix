@@ -1,0 +1,85 @@
+# apps (wm independent hotkeys)
+#-----------------------------------
+# terminal emulator
+super + Return
+	urxvtc
+ctrl + alt + t
+	urxvt
+# program launcher
+alt + space
+	dmenu_run -f -i -m 0
+# browser
+super + b
+	librewolf
+super + shift + b
+    chromium
+# file manager
+super + e
+	urxvt -e dash -c "lf"
+super + shift + e
+	pcmanfm
+# dino
+super + c
+	dino 
+# telegram 
+super + shift + c
+	telegram-desktop
+# network
+super + n
+	urxvtc -e dash -lc 'nmtui'
+# editor 
+super + x
+	textadept
+# discord
+super + d
+	chromium https://discord.com/app
+	#discord-development
+# steam
+super + s
+	steam-native
+# info
+super + i
+	$HOME/.local/bin/status_info
+# btop
+ctrl + shift + s
+	urxvtc -e dash -lc 'zenith'
+# audio control
+#-----------------------------------
+ctrl + Up
+	pactl set-sink-volume @DEFAULT_SINK@ +5%;$HOME/.local/bin/vol_level
+ctrl + Down
+	pactl set-sink-volume @DEFAULT_SINK@ -5%;$HOME/.local/bin/vol_level
+ctrl + {1,2,3,4,5,6,7,8,9,0}
+	pactl set-sink-volume @DEFAULT_SINK@ (1,2,3,4,5,6,7,8,9,10)0%;vol_level
+# bspwm hotkeys
+#-----------------------------------
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit, wm -r}
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+# make sxhkd reload its configuration files:
+super + shift + Escape
+    pkill -USR1 -x sxhkd
+# state/flags
+#-----------------------------------
+# Toggle fullscreen
+super + shift + f
+  bspc node -t {fullscreen,tiled}
+# focus/swap
+#-----------------------------------
+# focus the node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+# move/resize
+#-----------------------------------
+# expand a window by moving one of its side outward
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+# contract a window by moving one of its side inward
+super + alt + shift + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}

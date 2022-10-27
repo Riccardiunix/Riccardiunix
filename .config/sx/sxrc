@@ -1,0 +1,6 @@
+#!/bin/sh
+#RXVT_SOCKET='/tmp/urxvt-socket' 
+urxvtd -q -o -f &
+firefox-sync.sh xtn1o9ny.arkenfox &
+xrdb $HOME/.config/Xdefaults &
+bspwm

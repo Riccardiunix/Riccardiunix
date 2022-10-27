@@ -1,0 +1,13 @@
+browser "surf %u"
+
+include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
+
+download-retries 4
+download-timeout 60
+
+auto-reload yes
+
+macro y set browser "mpv --speed=1.3 --fs --pause %u" ; open-in-browser ; set browser "surf %u"
+
+highlight feedlist "---.*---" blue default bold
+highlight feedlist ".*0/0.." default default invis

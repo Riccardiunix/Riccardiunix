@@ -1,0 +1,15 @@
+#!/bin/bash
+bold=$(tput bold)
+normal=$(tput sgr0)
+for dir in $(ls -d */)
+do
+    cd $dir
+    if [ -d ".git" ] && [ "$(git pull)" != "Already up to date." ]; then
+    	echo  "   ${bold}$dir${normal}"
+    fi
+	if [ -d ".svn" ]; then
+		svn --config-dir $XDG_CONFIG_HOME/subversion up
+    	echo  "   ${bold}$dir${normal}"
+	fi
+    cd ..
+done
