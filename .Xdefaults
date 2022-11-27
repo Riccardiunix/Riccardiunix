@@ -18,6 +18,10 @@
 *.color7:#bfbaac
 *.color15:#fdf6e3
 
+urxvt.colorIT:#87af5f
+urxvt.colorBD:#d7d7d7
+urxvt.colorUL:#87afd7
+
 urxvt.font:xft:Hack:pixelsize=12
 urxvt.letterSpace:-1
 urxvt.lineSpace:0
@@ -29,7 +33,7 @@ urxvt.depth:24
 urxvt.iso14755:false
 urxvt.iso14755_52:false
 urxvt.skipScroll:true
-!!urxvt.skipBuiltinGlyphs:true
+urxvt.skipBuiltinGlyphs:true
 
 urxvt.perl-ext-common:default,matcher
 urxvt.keysym.M-c:eval:selection_to_clipboard

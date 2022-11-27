@@ -23,8 +23,9 @@ alias rput='rsync -aruPW /home/orion/UniVR orion@10.0.0.9:/home/orion/'
 alias ffmpeg='ffmpeg -vaapi_device /dev/dri/renderD128 -hide_banner'
 alias ffprobe='ffprobe -hide_banner'
 alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
-alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
 alias wget='wget --hsts-file="$XDG_DATA_HOME"/wget-hsts'
-alias monerod='monerod --data-dir "$XDG_DATA_HOME"/bitmonero'
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
-alias make="make -j8"
+alias diff='diff --color'
+alias grep='grep --color'
+alias monerod='monerod --data-dir "$XDG_DATA_HOME"/bitmonero'
+alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'

@@ -1,3 +1,4 @@
+#!/bin/sh
 set shell sh
 set shellopts '-eu'
 set ifs "\n"
