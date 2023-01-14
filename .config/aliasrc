@@ -29,5 +29,6 @@ alias diff='diff --color'
 alias grep='grep --color'
 alias nsxiv='setsid -f nsxiv > /dev/null 2>&1'
 alias mp='setsid -f mpv > /dev/null 2>&1'
+alias geany='setsid -f geany > /dev/null 2>&1'
 alias monerod="monerod --data-dir $XDG_DATA_HOME/bitmonero"
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'

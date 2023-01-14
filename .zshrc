@@ -1,4 +1,10 @@
 #!/bin/sh
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	exec sx
+fi
+
+clear
+
 export PATH=~/.local/bin:~/.local/share/cargo/bin:$PATH
 
 export XDG_CONFIG_HOME=~/.config
@@ -40,12 +46,17 @@ export TERMINAL=urxvtc
 export TERMCMD=urxvtc
 export READER=zathura
 export PAGER=less
-export MANPAGER='dash -c "col -bx | bat -l man -p"'
+export MANPAGER="dash -c 'col -bx | bat -l man -p'"
 
 export LIBVA_DRIVER_NAME=nvidia
 export VDPAU_DRIVER=nvidia
 export MESA_NO_DITHER=1
+export NVD_BACKEND=direct
 export LP_PERF='no_mipmap,no_linear,no_mip_linear,no_tex,no_blend,no_depth,no_alphatest'
+
+export MANGOHUD_CONFIG="cpu_temp,gpu_temp,ram,vram,"
+
+export MOZ_DISABLE_RDD_SANDBOX=1
 
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
@@ -64,16 +75,16 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
-export PYTHONSTARTUP='/etc/python/pythonrc'
+export PYTHONSTARTUP=/etc/python/pythonrc
 export QT_QPA_PLATFORMTHEME=qt5ct
 export RXVT_SOCKET="$XDG_DATA_HOME"/urxvt/urxvt-socket
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 
 export GST_PLUGIN_FEATURE_RANK=nvmpegvideodec:MAX,nvmpeg2videodec:MAX,nvmpeg4videodec:MAX,nvh264sldec:MAX,nvh264dec:MAX,nvjpegdec:MAX,nvh265sldec:MAX,nvh265dec:MAX,nvvp9dec:MAX,avdec_av1:NONE,av1dec:NONE
 
-PS1=' %F{3}>%f '
+PS1=' %F{5}>%f '
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec sx
-fi
+LFCD="$XDG_CONFIG_HOME"/lf/lfcd.sh
+[ -f "$LFCD" ] || . "$LFCD"

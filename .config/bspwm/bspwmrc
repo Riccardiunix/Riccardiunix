@@ -3,7 +3,7 @@ bspc rule -r "*"
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor DP-0  -d 1 2 3 4 5 &
+bspc monitor DP-0 -d 1 2 3 4 5 &
 bspc monitor HDMI-0 -d 6 7 8 9 0 &
 
 xrandr --output DP-0 --mode auto -r 144.00 --output HDMI-0 --mode auto -r 50.00 --right-of DP-0 &

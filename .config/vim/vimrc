@@ -18,7 +18,7 @@ set clipboard=unnamedplus
 set encoding=utf-8
 set backspace=indent,eol,start
 
-set viminfo='10,<100,:100,%,n/home/orion/.config/vim/viminfo
+set viminfo='10,<100,:100,%,n/$XDG_CONFIG_HOME/vim/viminfo
 set ttimeoutlen=30
 
 set runtimepath^=$XDG_CONFIG_HOME/vim

@@ -19,15 +19,15 @@ super + shift + e
 # xmpp
 super + c
 	dino
-# telegram 
+# telegram
 super + shift + c
 	telegram-desktop
 # network
 super + n
-	$TERMINAL -e  'nmtui'
-# editor 
+	$TERMINAL -e nmtui
+# editor
 super + x
-	geany
+	$GUI_EDITOR
 # screenshot
 Print
 	scrot
@@ -60,6 +60,14 @@ ctrl + {1,2,3,4,5,6,7,8,9,0}
 	pactl set-sink-volume @DEFAULT_SINK@ {1,2,3,4,5,6,7,8,9,10}0%;vol_level
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioStop
+	mocp -s
+XF86AudioPrev
+	mocp -r
+XF86AudioNext
+	mocp -f
+XF86AudioPlay
+	mocp -p
 # brightness hotkeys
 #-----------------------------------
 XF86MonBrightnessUp
