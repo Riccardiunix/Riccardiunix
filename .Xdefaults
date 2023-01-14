@@ -24,7 +24,7 @@ urxvt.colorUL:#87afd7
 
 urxvt.font:xft:Hack:pixelsize=12
 urxvt.letterSpace:-1
-urxvt.lineSpace:0
+urxvt.lineSpace:1
 urxvt.geometry:92x24
 urxvt.saveline:2048
 urxvt.scrollBar:false
@@ -40,3 +40,7 @@ urxvt.keysym.M-c:eval:selection_to_clipboard
 urxvt.keysym.M-v:eval:paste_clipboard
 urxvt.url-launcher:/bin/librewolf
 urxvt.matcher.button:1
+
+urxvt.secondaryScreen:1
+urxvt.secondaryScroll:0
+urxvt.secondaryWheel:1

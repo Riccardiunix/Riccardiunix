@@ -1,0 +1,3 @@
+#!/bin/sh
+killall -q herbe
+herbe "BLK:$(xbacklight -get)%"

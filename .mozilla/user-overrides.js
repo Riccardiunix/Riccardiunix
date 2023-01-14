@@ -1,7 +1,8 @@
-# UTILS
+#UTILS
+user_pref("browser.compactmode.show", true);
 user_pref("gfx.webrender.all", true);
-user_pref("gfx.webrender.software", true);
 user_pref("media.ffmpeg.vaapi.enabled", true);
+user_pref("gfx.webrender.software", true);
 user_pref("dom.ipc.processCount", 4);
 user_pref("browser.preferences.defaultPerformanceSettings.enabled", false);
 user_pref("mousewheel.min_line_scroll_amount", 30);
@@ -10,6 +11,24 @@ user_pref("general.smoothScroll.pages", false);
 user_pref("image.mem.min_discard_timeout_ms", 2100000000);
 user_pref("image.mem.max_decoded_image_kb", 512);
 
+user_pref("browser.cache.disk.parent_directory", "/run/user/1000/iceweasel");
+user_pref("media.hardware-video-decoding.force-enabled", true);
+user_pref("full-screen-api.warning.timeout", 0);
+
+user_pref("media.getusermedia.aec_enabled", false);
+user_pref("media.getusermedia.agc_enabled", false);
+user_pref("media.getusermedia.noise_enabled", false);
+user_pref("media.getusermedia.hpf_enabled", false);
+
+user_pref("browser.newtab.preload", false);
+
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
+user_pref("security.pki.sha1_enforcement_level",  1);
+user_pref("media.autoplay.default", 5);
+user_pref("network.cookie.lifetimePolicy", 2);
+
 #PRIVACY
 user_pref("dom.push.enabled", false);
 user_pref("privacy.firstparty.isolate", true);
@@ -17,6 +36,7 @@ user_pref("toolkit.telemetry.server", "");
 
 user_pref("browser.selfsupport.url", "");
 user_pref("devtools.onboarding.telemetry.logged", false);
+user_pref("javascript.options.wasm", false);
 user_pref("javascript.options.wasm_baselinejit", false);
 user_pref("javascript.options.wasm_ionjit", false);
 
