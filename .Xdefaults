@@ -22,11 +22,10 @@ urxvt.colorIT:#87af5f
 urxvt.colorBD:#d7d7d7
 urxvt.colorUL:#87afd7
 
-urxvt.font:xft:Hack:pixelsize=12
+urxvt.font:-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+urxvt.boldFont:-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
 urxvt.letterSpace:-1
 urxvt.lineSpace:1
-urxvt.geometry:92x24
-urxvt.saveline:2048
 urxvt.scrollBar:false
 urxvt.urgentOnBell:true
 urxvt.depth:24
@@ -35,7 +34,7 @@ urxvt.iso14755_52:false
 urxvt.skipScroll:true
 urxvt.skipBuiltinGlyphs:true
 
-urxvt.perl-ext-common:default,matcher
+urxvt.perl-ext-common:default,matcher,-confirm-paste
 urxvt.keysym.M-c:eval:selection_to_clipboard
 urxvt.keysym.M-v:eval:paste_clipboard
 urxvt.url-launcher:/bin/librewolf
@@ -43,4 +42,3 @@ urxvt.matcher.button:1
 
 urxvt.secondaryScreen:1
 urxvt.secondaryScroll:0
-urxvt.secondaryWheel:1

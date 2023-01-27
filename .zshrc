@@ -1,8 +1,4 @@
 #!/bin/sh
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	exec sx
-fi
-
 clear
 
 export PATH=~/.local/bin:~/.local/share/cargo/bin:$PATH
@@ -88,3 +84,7 @@ PS1=' %F{5}>%f '
 
 LFCD="$XDG_CONFIG_HOME"/lf/lfcd.sh
 [ -f "$LFCD" ] || . "$LFCD"
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	exec sx
+fi

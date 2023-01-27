@@ -1,15 +1,17 @@
 #!/bin/bash
-bold=$(tput bold)
+bold=$(tput bold setf 5)
 normal=$(tput sgr0)
 for dir in $(ls -d */)
 do
     cd $dir
     if [ -d ".git" ] && [ "$(git pull)" != "Already up to date." ]; then
-    	echo  "   ${bold}$dir${normal}"
-    fi
-	if [ -d ".svn" ]; then
+    	echo  "       ${bold}$dir${normal}"
+    elif [ -d ".svn" ]; then
 		svn --config-dir $XDG_CONFIG_HOME/subversion up
-    	echo  "   ${bold}$dir${normal}"
+    	echo  "       ${bold}$dir${normal}"
+	elif [ -f ".cvsignore" ]; then
+		cvs update
+    	echo  "       ${bold}$dir${normal}"
 	fi
     cd ..
 done

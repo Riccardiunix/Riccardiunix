@@ -34,6 +34,9 @@ Print
 # info
 super + i
 	status_info
+# audio
+super + a
+	pavucontrol
 # sys monitor
 ctrl + shift + s
 	$TERMINAL -e zenith
