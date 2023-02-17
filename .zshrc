@@ -1,6 +1,4 @@
 #!/bin/sh
-clear
-
 export PATH=~/.local/bin:~/.local/share/cargo/bin:$PATH
 
 export XDG_CONFIG_HOME=~/.config
@@ -20,11 +18,10 @@ zstyle :compinstall filename ~/.zshrc
 
 autoload -Uz compinit promptinit
 compinit -d $XDG_DATA_HOME/zsh/zcompdump
-zstyle ':completion:*' menu select
+zstyle ':completion:*' rehash true menu select
 zmodload zsh/complist
 promptinit
 _com_option+=(globdots)
-prompt walters
 
 autoload -U colors && colors
 . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -81,10 +78,11 @@ export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 export GST_PLUGIN_FEATURE_RANK=nvmpegvideodec:MAX,nvmpeg2videodec:MAX,nvmpeg4videodec:MAX,nvh264sldec:MAX,nvh264dec:MAX,nvjpegdec:MAX,nvh265sldec:MAX,nvh265dec:MAX,nvvp9dec:MAX,avdec_av1:NONE,av1dec:NONE
 
 PS1=' %F{5}>%f '
+RPROMPT='%F{3}%1~%f'
 
 LFCD="$XDG_CONFIG_HOME"/lf/lfcd.sh
 [ -f "$LFCD" ] || . "$LFCD"
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
 	exec sx
 fi
