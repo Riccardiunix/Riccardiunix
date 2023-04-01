@@ -33,18 +33,21 @@ export GREP_COLORS='mt=1;32'
 
 export EDITOR=nvim
 export BROWSER=librewolf
+export _BROWSER=iceweasel
 export GUI_EDITOR=geany
 export VISUAL=nvim
 export TERMINAL=urxvtc
-export TERMCMD=urxvtc
+export _TERMINAL=urxvt
 export READER=zathura
 export PAGER=less
 export MANPAGER="dash -c 'col -bx | bat -l man -p'"
+export SYSMONITOR=btop
 
 export LIBVA_DRIVER_NAME=nvidia
 export VDPAU_DRIVER=nvidia
 export MESA_NO_DITHER=1
 export NVD_BACKEND=direct
+export MOZ_DRM_DEVICE=/dev/dri/renderD128
 export LP_PERF='no_mipmap,no_linear,no_mip_linear,no_tex,no_blend,no_depth,no_alphatest'
 
 export MANGOHUD_CONFIG="cpu_temp,gpu_temp,ram,vram,"
@@ -83,6 +86,4 @@ RPROMPT='%F{3}%1~%f'
 LFCD="$XDG_CONFIG_HOME"/lf/lfcd.sh
 [ -f "$LFCD" ] || . "$LFCD"
 
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-	exec sx
-fi
+[[ -z "$DISPLAY" && "$XDG_VTNR" -eq 1 ]] && exec sx

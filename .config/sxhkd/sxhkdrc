@@ -2,15 +2,15 @@
 super + Return
 	$TERMINAL
 ctrl + alt + t
-	urxvt
+	$_TERMINAL
 # program launcher
 alt + space
-	dmenu_run -f -i -m 0
+	dmenu_run -f -i -m 0 -l 20 -p Launch:
 # browser
 super + b
 	$BROWSER
 super + shift + b
-	chromium
+	$_BROWSER
 # file manager
 super + e
 	$TERMINAL -e lf
@@ -39,10 +39,10 @@ super + a
 	pavucontrol
 # sys monitor
 ctrl + shift + s
-	$TERMINAL -e zenith
+	$TERMINAL -e $SYSMONITOR
 # lock
 super + shift + l
-	slock
+	xsecurelock
 # discord
 super + d
 	discord-development
