@@ -3,5 +3,7 @@
 xrdb $HOME/.config/Xdefaults &
 urxvtd -q -o -f &
 xset r rate 200 50 &
-xset s 600 &
+xset s 300 &
+xss-lock xsecurelock &
+redshift &
 bspwm
