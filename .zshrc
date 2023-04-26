@@ -33,7 +33,7 @@ export GREP_COLORS='mt=1;32'
 
 export EDITOR=nvim
 export BROWSER=librewolf
-export _BROWSER=iceweasel
+export _BROWSER=firefox
 export GUI_EDITOR=geany
 export VISUAL=nvim
 export TERMINAL=urxvtc
@@ -41,12 +41,12 @@ export _TERMINAL=urxvt
 export READER=zathura
 export PAGER=less
 export MANPAGER="dash -c 'col -bx | bat -l man -p'"
-export SYSMONITOR=btop
+export SYSMONITOR=htop
 
-export LIBVA_DRIVER_NAME=nvidia
-export VDPAU_DRIVER=nvidia
+#export LIBVA_DRIVER_NAME=
+#export VDPAU_DRIVER=
+#export NVD_BACKEND=direct
 export MESA_NO_DITHER=1
-export NVD_BACKEND=direct
 export MOZ_DRM_DEVICE=/dev/dri/renderD128
 export LP_PERF='no_mipmap,no_linear,no_mip_linear,no_tex,no_blend,no_depth,no_alphatest'
 
@@ -78,7 +78,7 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 
-export GST_PLUGIN_FEATURE_RANK=nvmpegvideodec:MAX,nvmpeg2videodec:MAX,nvmpeg4videodec:MAX,nvh264sldec:MAX,nvh264dec:MAX,nvjpegdec:MAX,nvh265sldec:MAX,nvh265dec:MAX,nvvp9dec:MAX,avdec_av1:NONE,av1dec:NONE
+#export GST_PLUGIN_FEATURE_RANK=nvmpegvideodec:MAX,nvmpeg2videodec:MAX,nvmpeg4videodec:MAX,nvh264sldec:MAX,nvh264dec:MAX,nvjpegdec:MAX,nvh265sldec:MAX,nvh265dec:MAX,nvvp9dec:MAX,avdec_av1:NONE,av1dec:NONE
 
 PS1=' %F{5}>%f '
 RPROMPT='%F{3}%1~%f'
