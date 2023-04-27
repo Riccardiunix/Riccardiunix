@@ -14,6 +14,7 @@ let mapleader = ""
 set noswapfile 
 set ignorecase
 set tabstop=4
+set shiftwidth=4
 set clipboard=unnamedplus
 set encoding=utf-8
 set backspace=indent,eol,start

@@ -1,5 +1,4 @@
 #!/bin/sh
-#firefox-sync.sh  &
 xrdb $HOME/.config/Xdefaults &
 urxvtd -q -o -f &
 xset r rate 200 50 &
