@@ -87,3 +87,4 @@ LFCD="$XDG_CONFIG_HOME"/lf/lfcd.sh
 [ -f "$LFCD" ] || . "$LFCD"
 
 [[ -z "$DISPLAY" && "$XDG_VTNR" -eq 1 ]] && exec sx
+clear
