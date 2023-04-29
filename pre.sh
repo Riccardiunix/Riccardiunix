@@ -17,12 +17,6 @@ SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]",
 sudo sed -i '/ParallelDownloads/s/^#//g ; /Color/s/^#//g' /etc/pacman.conf &
 sudo sed -i '/BUILDDIR/s/^#//g ; /MAKEFLAGS=/s/^#//g ; s/COMPRESSZST=(zstd -c -z -q -)/COMPRESSZST=(zstd -c -z -q --threads=0 -)/g ; s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z --threads=0 -)/g ; s/"-march=x86-64/"-march=native/g ; s/#RUSTFLAGS="-C opt-level=2"/RUSTFLAGS="-C opt-level=2 -C target-cpu=native"/g' /etc/makepkg.conf &
 
-echo -n "SSID: ";read SSID
-if [ $SSID != "" ]; then
-	echo -n "PSW: ";read PSW
-	nmcli device wifi connect "\"$SSID\"" password "\"$PSW\"" hidden yes
-fi
-
 sudo pacman -S pigz pbzip2 ccache --needed || exit 1
 
 sudo sed -i 's/COMPRESSGZ=(gzip -c -f -n)/COMPRESSGZ=(pigz-c -f -n)/g ; s/COMPRESSBZ2=(bzip2 -c -f)/COMPRESSBZ2=(pbzip2 -c -f)/g ; s/!ccache/ccache/g' /etc/makepkg.conf
@@ -43,6 +37,6 @@ sudo sysctl --system -q &
 
 cd /usr/share/fonts/misc
 sudo mkfontscale
-sudo mkfontdir &
+sudo mkfontdir 
 
 chsh -s /bin/zsh
