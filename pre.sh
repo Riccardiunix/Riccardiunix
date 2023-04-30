@@ -21,7 +21,7 @@ sudo pacman -S pigz pbzip2 ccache --needed || exit 1
 
 sudo sed -i 's/COMPRESSGZ=(gzip -c -f -n)/COMPRESSGZ=(pigz-c -f -n)/g ; s/COMPRESSBZ2=(bzip2 -c -f)/COMPRESSBZ2=(pbzip2 -c -f)/g ; s/!ccache/ccache/g' /etc/makepkg.conf
 
-sudo pacman -S bspwm sxhkd dmenu sx rxvt-unicode exa zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting lf htop doas neovim dash bat man-db xorg-xrdb xorg-xset xorg-mkfontscale xorg-xbacklight xss-lock xsecurelock terminus-font ttf-dejavu ttf-hack terminator python-pipx rust sccache base-devel --needed || exit 1
+sudo pacman -S bspwm sxhkd dmenu sx rxvt-unicode exa zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting lf htop doas neovim dash bat man-db xorg-xrdb xorg-xset xorg-mkfontscale xorg-xbacklight terminus-font ttf-dejavu ttf-hack terminator pcmanfm python-pipx rust sccache base-devel --needed || exit 1
 
 pipx install trash-cli &
 
@@ -37,6 +37,6 @@ sudo sysctl --system -q &
 
 cd /usr/share/fonts/misc
 sudo mkfontscale
-sudo mkfontdir 
+sudo mkfontdir
 
 chsh -s /bin/zsh

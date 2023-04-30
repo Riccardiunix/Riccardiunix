@@ -10,7 +10,7 @@ sudo sed -i '/BottomUp/s/^#//g ; /\[bin\]/s/^#//g ; /Sudo = doas/s/^#//g' /etc/p
 
 /bin/rm -rf paru
 
-paru -S wmname pcmanfm geckodriver pavucontrol scrot geany telegram-desktop dino zathura zathura-pdf-mupdf libva-mesa-driver mesa-vdpau python-pip arc-gtk-theme arc-icon-theme qbittorrent libva-vdpau-driver libvdpau-va-gl gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly libde265 gst-plugin-pipewire gstreamer-vaapi adriconf lazygit mesa-utils p7zip mpv yt-dlp linux-tools devtools rsync newsboat lxsession ethtool tlp irqbalance thermald smartmontools tlp-rdw powertop udisks2 bc librewolf-bin jellyfin-media-player ananicy-cpp ananicy-rules-git noisetorch ff2mpv-native-messaging-host-librewolf-git profile-sync-daemon-librewolf herbe tlpui nsxiv asp github-cli thunderbird gamemode keepassxc --needed
+paru -S wmname geckodriver pavucontrol scrot geany telegram-desktop dino zathura zathura-pdf-mupdf libva-mesa-driver mesa-vdpau python-pip arc-gtk-theme arc-icon-theme qbittorrent libva-vdpau-driver libvdpau-va-gl gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly libde265 wget gst-plugin-pipewire gstreamer-vaapi adriconf lazygit mesa-utils p7zip mpv yt-dlp linux-tools devtools rsync newsboat lxsession ethtool tlp irqbalance thermald smartmontools tlp-rdw powertop udisks2 bc librewolf-bin jellyfin-media-player ananicy-cpp ananicy-rules-git noisetorch xss-lock xsecurelock redshift ff2mpv-native-messaging-host-librewolf-git profile-sync-daemon-librewolf herbe tlpui nsxiv asp github-cli thunderbird gamemode keepassxc --needed
 
 sudo systemctl enable --now ananicy-cpp irqbalance thermald tlp
 

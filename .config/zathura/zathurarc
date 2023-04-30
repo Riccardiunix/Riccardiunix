@@ -2,4 +2,3 @@ set window-title-basename "true"
 set selection-clipboard "clipboard"
 set render-loading true
 set adjust-open width
-
