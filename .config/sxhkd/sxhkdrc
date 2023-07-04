@@ -45,7 +45,7 @@ super + shift + l
 	xsecurelock
 # discord
 super + d
-	discord-development
+	webcord
 # steam
 super + s
 	steam-native
