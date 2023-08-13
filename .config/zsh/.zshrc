@@ -46,6 +46,8 @@ export SYSMONITOR=htop
 #export LIBVA_DRIVER_NAME=
 #export VDPAU_DRIVER=
 #export NVD_BACKEND=direct
+export MESA_GL_VERSION_OVERRIDE=4.2
+export VAAPI_MPEG4_ENABLED=true
 export MESA_NO_DITHER=1
 export MOZ_DRM_DEVICE=/dev/dri/renderD128
 export LP_PERF='no_mipmap,no_linear,no_mip_linear,no_tex,no_blend,no_depth,no_alphatest'
@@ -74,9 +76,11 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYTHONSTARTUP=/etc/python/pythonrc
 export QT_QPA_PLATFORMTHEME=qt5ct
 export RXVT_SOCKET="$XDG_DATA_HOME"/urxvt/urxvt-socket
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
+export GDBHISTFILE="$XDG_CONFIG_HOME"/gdb/gdb_history
 
 PS1=' %F{5}>%f '
 RPROMPT='%F{3}%1~%f'

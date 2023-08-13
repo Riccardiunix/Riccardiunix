@@ -9,6 +9,7 @@ set smartindent
 set autoindent
 set hidden
 
+noremap jj <nop>
 inoremap jk <ESC>
 let mapleader = ""
 set noswapfile 
@@ -20,7 +21,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 
 set viminfo='10,<100,:100,%,n/$XDG_CONFIG_HOME/vim/viminfo
-set ttimeoutlen=30
+set ttimeoutlen=10
 
 set runtimepath^=$XDG_CONFIG_HOME/vim
 set runtimepath+=$XDG_DATA_HOME/vim

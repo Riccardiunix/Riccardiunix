@@ -5,23 +5,16 @@ ctrl + alt + t
 	$_TERMINAL
 # program launcher
 alt + space
-	dmenu_run -f -i -m 0 -l 20 -p Launch:
+	dmenu_run -f -i -m 0 #-l 20 -p Launch:
 # browser
-super + b
-	$BROWSER
-super + shift + b
-	$_BROWSER
+super + {_,shift +} b
+	{$BROWSER,$_BROWSER}
 # file manager
-super + e
-	$TERMINAL -e lf
-super + shift + e
-	pcmanfm
-# xmpp
-super + c
-	dino
-# telegram
-super + shift + c
-	telegram-desktop
+super + {_,shift +} e
+	{$TERMINAL -e lf, pcmanfm}
+# chat
+super + {_,shift +} c
+	{dino, telegram-desktop}
 # network
 super + n
 	$TERMINAL -e nmtui
@@ -66,13 +59,13 @@ XF86AudioMute
 XF86AudioMicMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 XF86AudioStop
-	mocp -s
+	mpc stop
 XF86AudioPrev
-	mocp -r
+	mpc prev
 XF86AudioNext
-	mocp -f
+	mpc next
 XF86AudioPlay
-	mocp -p
+	mpc play
 # brightness hotkeys
 #-----------------------------------
 XF86MonBrightnessUp
@@ -92,7 +85,7 @@ super + {_,shift + }w
 # make sxhkd reload its configuration files:
 super + shift + Escape
     pkill -USR1 -x sxhkd
-super + shift + f
+super + f
 	bspc node -t {fullscreen,tiled}
 # focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
@@ -106,9 +99,7 @@ super + alt + {Left,Down,Up,Right}
 # contract a window by moving one of its side inward
 super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-# Close screen
-super + shift + k
-    sleep 0.5; xset dpms force standby
-# Rotate desktop
 super + {Next,Prior}
+	bspc desktop -f {prev,next}.occupied
+super + ctrl + {Left,Right}
     bspc desktop -f {next,prev}
