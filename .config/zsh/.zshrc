@@ -37,10 +37,10 @@ export _BROWSER=firefox
 export GUI_EDITOR=geany
 export VISUAL=nvim
 export TERMINAL=urxvtc
-export _TERMINAL=urxvt
+export _TERMINAL=terminator
 export READER=zathura
-export PAGER=less
-export MANPAGER="dash -c 'col -bx | bat -l man -p'"
+export PAGER=most
+export MANPAGER='most -s'
 export SYSMONITOR=htop
 
 #export LIBVA_DRIVER_NAME=
@@ -52,7 +52,7 @@ export MESA_NO_DITHER=1
 export MOZ_DRM_DEVICE=/dev/dri/renderD128
 export LP_PERF='no_mipmap,no_linear,no_mip_linear,no_tex,no_blend,no_depth,no_alphatest'
 
-export MANGOHUD_CONFIG="cpu_temp,gpu_temp,ram,vram,"
+export MANGOHUD_CONFIG='cpu_temp,gpu_temp,ram,vram,'
 
 export MOZ_DISABLE_RDD_SANDBOX=1
 

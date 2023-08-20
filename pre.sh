@@ -26,7 +26,7 @@ sudo pacman -S bspwm sxhkd dmenu sx rxvt-unicode exa zsh zsh-autosuggestions zsh
 echo 'permit keepenv persist orion' | sudo tee /etc/doas.conf >/dev/null
 echo 'export ZDOTDIR=$HOME/.config/zsh' | sudo tee /etc/zsh/zshenv >/dev/null
 
-mkdir -p ~/.local/share/zsh ~/.local/share/urxvt ~/.local/share/gnupg ~/.config/git
+mkdir -p ~/.local/share/zsh ~/.local/share/urxvt ~/.local/share/gnupg ~/.config/git ~/Applications ~/.local/share/android
 cp -r .config ~
 cp -r .local ~
 sudo cp 99-sysctl.conf /etc/sysctl.d/

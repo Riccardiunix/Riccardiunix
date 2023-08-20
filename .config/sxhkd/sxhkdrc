@@ -42,6 +42,9 @@ super + d
 # steam
 super + s
 	steam-native
+# mail
+super + m
+	thunderbird
 # audio hotkeys
 #-----------------------------------
 ctrl + Up

@@ -1,1 +1,0 @@
-nmcli device wifi connect "SSID" password "PSW" hidden yes

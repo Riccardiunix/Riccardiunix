@@ -4,5 +4,6 @@ herbe "$(date '+%H:%M %d/%m/%y')" " " \
 "BKL: $(xbacklight -get)%" " " \
 "BAT: $(cat /sys/class/power_supply/BAT?/capacity)%" " " \
 "VOL: $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{printf $5}')" " " \
+"LAN: $(ip --brief address show | grep 'UP' | awk '{print $3}' | awk -F\/ '{print $1}')" " " \
 "$(set -- $(sensors | grep -i package); printf 'CPU:%s' "$4")" " " \
 "GPU:+$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits).0°C"
