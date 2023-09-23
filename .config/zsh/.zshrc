@@ -46,28 +46,30 @@ export SYSMONITOR=htop
 #export LIBVA_DRIVER_NAME=
 #export VDPAU_DRIVER=
 #export NVD_BACKEND=direct
-export MESA_GL_VERSION_OVERRIDE=4.2
 export VAAPI_MPEG4_ENABLED=true
 export MESA_NO_DITHER=1
 export MOZ_DRM_DEVICE=/dev/dri/renderD128
+export mesa_glthread=true
 export LP_PERF='no_mipmap,no_linear,no_mip_linear,no_tex,no_blend,no_depth,no_alphatest'
 
 export MANGOHUD_CONFIG='cpu_temp,gpu_temp,ram,vram,'
 
 export MOZ_DISABLE_RDD_SANDBOX=1
 
+#export __GL_THREADED_OPTIMIZATIONS=1
+#export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/nv
+#export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
+
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CRAWL_DIR="$XDG_DATA_HOME"/crawl/
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
-export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GOPATH="$XDG_DATA_HOME"/go
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
 export _JAVA_AWT_WM_NONREPARENTING=1
-export JAVA_HOME=/usr/lib/jvm/default
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
@@ -77,7 +79,6 @@ export PYTHONSTARTUP=/etc/python/pythonrc
 export QT_QPA_PLATFORMTHEME=qt5ct
 export RXVT_SOCKET="$XDG_DATA_HOME"/urxvt/urxvt-socket
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 export GDBHISTFILE="$XDG_CONFIG_HOME"/gdb/gdb_history

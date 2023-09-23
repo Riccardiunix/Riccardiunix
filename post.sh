@@ -9,7 +9,7 @@ cd ..
 
 sudo sed -i '/BottomUp/s/^#//g ; /\[bin\]/s/^#//g ; /Sudo = doas/s/^#//g' /etc/paru.conf
 
-paru -S wmname geckodriver pavucontrol scrot geany telegram-desktop dino zathura zathura-pdf-mupdf libva-mesa-driver mesa-vdpau python-pip arc-gtk-theme arc-icon-theme qbittorrent libva-vdpau-driver libvdpau-va-gl gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly libde265 wget gst-plugin-pipewire gstreamer-vaapi adriconf lazygit mesa-utils p7zip mpv yt-dlp linux-tools devtools rsync newsboat lxsession ethtool tlp irqbalance thermald smartmontools tlp-rdw powertop udisks2 bc librewolf-bin jellyfin-media-player ananicy-rules-git noisetorch xsecurelock redshift ff2mpv-native-messaging-host-librewolf-git profile-sync-daemon-librewolf tlpui nsxiv asp github-cli thunderbird gamemode keepassxc mosh gnome-disk-utility arandr go clang prettyping plzip atool bleachbit lynx odt2txt mediainfo bat asp bleachbit tldr xidlehook noto-fonts-emoji mpd mpc ncmpcpp pipewire-alsa pipewire-pulse xorg-xsetroot xss-lock firefox cmakeninja ananicy-cpp most libreoffice-fresh-it hunspell-it hyphen-it mythes-it --noconfirm --needed || exit 1
+paru -S wmname geckodriver pavucontrol scrot geany telegram-desktop dino zathura zathura-pdf-mupdf libva-mesa-driver mesa-vdpau python-pip arc-gtk-theme arc-icon-theme qbittorrent libva-vdpau-driver libvdpau-va-gl gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly libde265 wget gst-plugin-pipewire gstreamer-vaapi adriconf lazygit mesa-utils p7zip mpv yt-dlp linux-tools devtools rsync newsboat lxsession ethtool tlp irqbalance thermald smartmontools tlp-rdw powertop udisks2 bc librewolf-bin jellyfin-media-player ananicy-rules-git noisetorch xsecurelock redshift ff2mpv-native-messaging-host-librewolf-git profile-sync-daemon-librewolf tlpui nsxiv asp github-cli thunderbird gamemode keepassxc mosh gnome-disk-utility arandr go clang prettyping plzip atool bleachbit lynx odt2txt mediainfo bat asp bleachbit tldr xidlehook noto-fonts-emoji mpd mpc ncmpcpp pipewire-alsa pipewire-pulse xorg-xsetroot xss-lock firefox cmake ninja ananicy-cpp most libreoffice-fresh-it hunspell-it hyphen-it mythes-it tnftp pacman-contrib xorg-xev pyright ccls --noconfirm --needed || exit 1
 
 xdg-mime default librewolf.desktop x-scheme-handler/https x-scheme-handler/http
 
@@ -17,14 +17,12 @@ sudo sed -i 's/Logo=1/Logo=0/g' /etc/libreoffice/sofficerc
 sudo sed -i 's/COMPRESSLZ=(lzip -c -f)/COMPRESSLZ=(plzip -c -f)/g' /etc/makepkg.conf
 
 sudo systemctl enable --now ananicy-cpp irqbalance thermald tlp
+sudo systemctl enable paccache.timer
 
 librewolf -CreateProfile "main /home/orion/.librewolf/main"
 
 git clone https://github.com/arkenfox/user.js
-cp user.js/user.js ~/.librewolf/main/
-cp user.js/prefsCleaner.sh ~/.librewolf/main/
-cp user.js/updater.sh ~/.librewolf/main/
-cp .mozilla/user-overrides.js ~/.librewolf/main/
+cp {user.js/user.js , user.js/prefsCleaner.sh , user.js/updater.sh , .mozilla/user-overrides.js} ~/.librewolf/main/
 rm -rf user.js ~/.bash* paru
 
 cd ~/.librewolf/main
@@ -40,6 +38,6 @@ setsid -f librewolf about:profiles https://addons.mozilla.org/en-US/firefox/addo
 cd ~/Applications
 git clone https://github.com/dudik/herbe
 cd herbe
-sed -i 's/width = 450/width = 160/g ; s/pos_y = 60/pos_y = 30/g' config.def.h
+sed -i 's/width = 450/width = 190/g ; s/pos_y = 60/pos_y = 30/g' config.def.h
 sudo make install || exit 1
 cd ~

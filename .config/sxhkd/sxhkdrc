@@ -45,6 +45,9 @@ super + s
 # mail
 super + m
 	thunderbird
+# keepassxc
+super + k
+	keepassxc
 # audio hotkeys
 #-----------------------------------
 ctrl + Up
