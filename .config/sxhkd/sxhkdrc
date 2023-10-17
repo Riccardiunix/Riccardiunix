@@ -14,7 +14,7 @@ super + {_,shift +} e
 	{$TERMINAL -e lf, pcmanfm}
 # chat
 super + {_,shift +} c
-	{dino, telegram-desktop}
+	{LANGUAGE=it_IT signal-desktop --no-sandbox, telegram-desktop}
 # network
 super + n
 	$TERMINAL -e nmtui

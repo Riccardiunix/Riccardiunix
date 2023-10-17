@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -aruPW $1 orion@10.0.0.9:~/Syncl
+rsync -aruPW $1 server@10.0.0.9:~/Sync
