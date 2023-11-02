@@ -86,8 +86,7 @@ export GDBHISTFILE="$XDG_CONFIG_HOME"/gdb/gdb_history
 PS1=' %F{5}>%f '
 RPROMPT='%F{3}%1~%f'
 
-LFCD="$XDG_CONFIG_HOME"/lf/lfcd.sh
-[ -f "$LFCD" ] || . "$LFCD"
+. "$XDG_CONFIG_HOME"/lf/lfcd.sh
 
 [[ -z "$DISPLAY" && "$XDG_VTNR" -eq 1 ]] && exec sx
 clear

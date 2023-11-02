@@ -8,13 +8,14 @@ wifi.cloned-mac-address=random
 ipv6.ip6-privacy=2' | sudo tee /etc/NetworkManager/conf.d/wifi_rand_mac.conf >/dev/null || exit 1
 echo 'ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_len}="2000"' | sudo tee /etc/udev/rules.d/10-network.rules >/dev/null
 printf "PKGEXT='.pkg.tar'\nPKGEXT='.pkg.tar.lz4'\nGITFLAGS='--filter=tree:0'" | sudo tee -a /etc/makepkg.conf >/dev/null
-echo 'ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
-ACTION=="add|change", KERNEL=="sd[a-z]*|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="bfq"
-ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="none"' | sudo tee /etc/udev/rules.d/60-ioschedulers.rules >/dev/null
-echo 'SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-1]", RUN+="/usr/bin/systemctl hibernate"
-SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="/bin/xbacklight -set 0"' | sudo tee /etc/udev/rules.d/99-lowbat.rules >/dev/null
+printf "* hard core 0\n* soft core 0" sudo tee -a /etc/security/limits.conf >/dev/null
+printf "blacklist firewire-core\nblacklist firewire-net\nblacklist firewire-ohci\nblacklist firewire-sbp2" | sudo tee /etc/modprobe.d/blacklist.conf
+printf "ACTION=='add|change', KERNEL=='sd[a-z]*', ATTR{queue/rotational}=='1', ATTR{queue/scheduler}='bfq'\nACTION=='add|change', KERNEL=='sd[a-z]*|mmcblk[0-9]*', ATTR{queue/rotational}=='0', ATTR{queue/scheduler}='bfq'\nACTION=='add|change', KERNEL=='nvme[0-9]*', ATTR{queue/rotational}=='0', ATTR{queue/scheduler}='none'" | sudo tee /etc/udev/rules.d/60-ioschedulers.rules >/dev/null
+printf "SUBSYSTEM=='power_supply', ATTR{status}=='Discharging', ATTR{capacity}=='[0-1]', RUN+='/usr/bin/systemctl hibernate'\nSUBSYSTEM=='power_supply', ATTR{status}=='Discharging', ATTR{capacity}=='[0-5]', RUN+='/bin/xbacklight -set 0'" | sudo tee /etc/udev/rules.d/99-lowbat.rules >/dev/null
+printf "install dccp /bin/true\ninstall sctp /bin/true\ninstall rds /bin/true\ninstall tipc /bin/true" | sudo tee /etc/modprobe.d/netblock.conf >/dev/null
 sudo sed -i '/ParallelDownloads/s/^#//g ; /Color/s/^#//g' /etc/pacman.conf
 sudo sed -i '/BUILDDIR/s/^#//g ; /MAKEFLAGS=/s/^#//g ; s/COMPRESSZST=(zstd -c -z -q -)/COMPRESSZST=(zstd -c -z -q --threads=0 -)/g ; s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z --threads=0 -)/g ; s/"-march=x86-64/"-march=native/g ; s/#RUSTFLAGS="-C opt-level=2"/RUSTFLAGS="-C opt-level=2 -C target-cpu=native -C link-arg=-fuse-ld=mold"/g' /etc/makepkg.conf
+
 
 sudo pacman -S pigz pbzip2 ccache mold --noconfirm --needed || exit 1
 

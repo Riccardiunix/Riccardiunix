@@ -1,5 +1,10 @@
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.ccls.setup{}
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.denols.setup{}
+
+vim.g.airline_left_sep=''
+vim.g.airline_right_sep=''
 
 vim.g.mapleader = ','
 
@@ -43,3 +48,11 @@ vim.o.clipboard = 'unnamedplus'
 vim.api.nvim_command('highlight LineNr ctermfg=grey')
 
 vim.o.ttyfast  =true
+
+vim.cmd([[
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+]])

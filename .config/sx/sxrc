@@ -3,7 +3,7 @@ xrdb ~/.config/Xdefaults &
 urxvtd -q -o -f &
 xset r rate 200 50 &
 xset s off &
-xidlehook --detect-sleep --not-when-audio --not-when-fullscreen --timer 300 'xset dpms force standby' '' --timer 30 'xsecurelock' '' --timer 270 'systemctl suspend' '' &
+xidlehook --detect-sleep --not-when-audio --not-when-fullscreen --timer 600 'xsecurelock' '' --timer 300 'systemctl suspend' '' &
 xss-lock xsecurelock &
 redshift &
 lxpolkit -s bspwm -e bspwm &

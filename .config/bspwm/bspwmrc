@@ -34,5 +34,5 @@ bspc rule -a Zathura state=tiled &
 
 wmname bspwm &
 feh --no-fehbg --bg-fill ~/.config/bg.png
-xsetroot -cursor_name left_ptr &
-noisetorch -i
+xsetroot -cursor_name left_ptr 
+#noisetorch -i

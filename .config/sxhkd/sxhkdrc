@@ -5,7 +5,7 @@ ctrl + alt + t
 	$_TERMINAL
 # program launcher
 alt + space
-	dmenu_run -f -i -m 0 #-l 20 -p Launch:
+	dmenu_run -f -i -m 0
 # browser
 super + {_,shift +} b
 	{$BROWSER,$_BROWSER}
