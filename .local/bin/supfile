@@ -3,8 +3,6 @@ dir=$(uuidgen | cut -d'-' -f1)
 mkdir /tmp/$dir
 cp "$1" /tmp/$dir/
 7z a -t7z -mx=9 /tmp/$dir.7z /tmp/$dir/ -p -mhe=on
-#zip -r /tmp/$dir.zip /tmp/dir
-#zipcloak /tmp/$dir.zip
 curl -F"file=@/tmp/$dir.7z" 0x0.st
 shred -u /tmp/$dir/"$1" /tmp/$dir.7z
 rm -rf /tmp/$dir
