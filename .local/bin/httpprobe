@@ -1,0 +1,2 @@
+#!/bin/sh
+cat "$1" | parallel -j+0 "curl -Is {} -o /dev/null && echo {}"

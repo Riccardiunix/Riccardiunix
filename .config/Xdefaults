@@ -23,8 +23,10 @@
 *.colorUL:#87afd7
 
 *.utf8:1
-*.font:-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
-URxvt.boldFont:-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
+*font:-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
+*boldFont:-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
+*italicFont:-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
+*boldItalicFont:-*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
 URxvt.letterSpace:-1
 URxvt.scrollBar:false
 URxvt.depth:32

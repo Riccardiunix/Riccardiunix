@@ -36,6 +36,6 @@ bspc rule -a Surf state=tiled &
 bspc rule -a Zathura state=tiled &
 
 wmname bspwm &
-feh --no-fehbg --bg-fill ~/.config/bg.png
+feh --no-fehbg --bg-fill ~/.config/bg.png &
 xsetroot -cursor_name left_ptr &
 sleep 10;noisetorch -i
