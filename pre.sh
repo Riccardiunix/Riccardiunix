@@ -11,10 +11,8 @@ printf "install dccp /bin/true\ninstall sctp /bin/true\ninstall rds /bin/true\ni
 sudo sed -i '/ParallelDownloads/s/^#//g ; /Color/s/^#//g' /etc/pacman.conf
 sudo sed -i '/BUILDDIR/s/^#//g ; /MAKEFLAGS=/s/^#//g ; s/COMPRESSZST=(zstd -c -z -q -)/COMPRESSZST=(zstd -c -z -q --threads=0 -)/g ; s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z --threads=0 -)/g ; s/"-march=x86-64/"-march=native/g' /etc/makepkg.conf
 
-curl https://big.oisd.nl/hosts > hosts
-mv hosts /etc/hosts
 read HNAME < /etc/hostname
-printf "\n\n127.0.0.1 localhost\n127.0.1.1 $HNAME.lan $HNAME" | sudo tee -a /etc/hosts >/dev/null
+printf "127.0.0.1 localhost\n127.0.1.1 $HNAME.lan $HNAME" | sudo tee -a /etc/hosts >/dev/null
 
 sudo pacman -S pigz pbzip2 ccache mold doas --noconfirm --needed || exit 1
 
@@ -41,4 +39,4 @@ doas usermod -aG video,wheel,uucp,adm,disk,optical $(whoami)
 
 chsh -s /bin/zsh
 
-logout
+logout && exit

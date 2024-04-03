@@ -1,2 +1,3 @@
 #!/bin/sh
-rsync -aruPW $1 server@10.0.0.9:~/Sync
+rsync -aruPW $1 server@10.0.0.9:/data/Sync ||
+rsync -aruPW "$1" server@10.0.0.9:/data/Sync
