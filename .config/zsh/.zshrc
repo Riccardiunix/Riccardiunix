@@ -41,7 +41,7 @@ export _TERMINAL=terminator
 export READER=zathura
 export PAGER=most
 export MANPAGER='most -s'
-export SYSMONITOR=htop
+export SYSMONITOR=btop
 
 #export LIBVA_DRIVER_NAME=
 #export VDPAU_DRIVER=
@@ -65,6 +65,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CRAWL_DIR="$XDG_DATA_HOME"/crawl/
+export CQL_HISTORY="$XDG_DATA_HOME"/cassandra/cqlsh_history
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
 export GDBHISTFILE="$XDG_CONFIG_HOME"/gdb/gdb_history
