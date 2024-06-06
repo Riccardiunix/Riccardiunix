@@ -11,7 +11,6 @@ vim.g.mapleader = ','
 vim.o.swapfile = false
 vim.bo.swapfile = false
 vim.o.backup = false
-vim.o.writeback = false
 vim.o.autoread = true
 
 vim.o.tabstop = 4
@@ -26,13 +25,11 @@ vim.o.smartindent = true
 vim.bo.smartindent = true
 vim.o.autoindent = true
 vim.bo.autoindent = true
-vim.o.smartab = true
 
 vim.wo.relativenumber = true
 
 vim.o.ignorecase = true
 vim.o.incsearch = true
-vim.o.smartecase = true
 vim.o.hlsearch = true
 
 vim.o.lazyredraw = true

@@ -1,6 +1,10 @@
 #!/bin/sh
 bspc rule -r "*"
 
+#bspc monitor DP-0 -d 1 2 3 4 5 &
+#bspc monitor DP-3 -d 6 7 8 9 0 &
+#xrandr --output DP-0 --auto -r 144 --primary --output DP-3 --auto -r 50 --right-of DP-0 &
+
 SCR=$(xrandr -q | grep ' connected ' | awk '{print $1}')
 PRI=$(echo $SCR | awk '{print $1}')
 if [ "$SCR" = "$PRI" ]; then
@@ -38,4 +42,3 @@ bspc rule -a Zathura state=tiled &
 wmname bspwm &
 feh --no-fehbg --bg-fill ~/.config/bg.png &
 xsetroot -cursor_name left_ptr &
-sleep 10;noisetorch -i

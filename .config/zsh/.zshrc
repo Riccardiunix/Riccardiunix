@@ -51,8 +51,13 @@ export MESA_NO_DITHER=1
 export MOZ_DRM_DEVICE=/dev/dri/card1
 export mesa_glthread=true
 export LP_PERF='no_mipmap,no_linear,no_mip_linear,no_tex,no_blend,no_depth,no_alphatest'
+#export GST_PLUGIN_FEATURE_RANK=nvmpegvideodec:MAX,nvmpeg2videodec:MAX,nvmpeg4videodec:MAX,nvh264sldec:MAX,nvh264dec:MAX,nvjpegdec:MAX,nvh265sldec:MAX,nvh265dec:MAX,nvvp9dec:MAX,avdec_av1:NONE,av1dec:NONE
 
 export MANGOHUD_CONFIG='cpu_temp,gpu_temp,ram,vram,'
+
+#export MANGOHUD_CONFIG='cpu_temp,gpu_temp,ram,vram,'
+#export WINE_FULLSCREEN_FSR=1
+#export PROTON_ENABLE_NVAPI=1
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export USE_SYMENGINE=1
@@ -62,7 +67,10 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 #export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/nv
 #export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
 
+export GBM_BACKEND=nvidia-drm
+
 export ANDROID_HOME="$XDG_DATA_HOME"/android
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CRAWL_DIR="$XDG_DATA_HOME"/crawl/
 export CQL_HISTORY="$XDG_DATA_HOME"/cassandra/cqlsh_history
@@ -79,7 +87,8 @@ export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
 export MYPY_CACHE_DIR="$XDG_CACHE_HOME"/mypy
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
-export PYTHONSTARTUP=/etc/python/pythonrc
+export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
+export PYTHON_HISTORY="$XDG_CONFIG_HOME"/python
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export RXVT_SOCKET="$XDG_DATA_HOME"/urxvt/urxvt-socket
 export WINEPREFIX="$XDG_DATA_HOME"/wine
