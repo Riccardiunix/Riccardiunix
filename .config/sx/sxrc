@@ -1,6 +1,7 @@
 #!/bin/sh
 xrdb ~/.config/Xdefaults &
 urxvtd -q -o -f &
+xset b off &
 xset r rate 200 50 &
 xset s off &
 xidlehook --detect-sleep --not-when-audio --not-when-fullscreen --timer 600 'xsecurelock' '' --timer 300 'systemctl suspend' '' &

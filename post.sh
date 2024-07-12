@@ -1,8 +1,7 @@
 #!/bin/sh
-mkdir ~/.config/python ~/.config/pipewire/pipewire.conf.d/
+mkdir -p ~/.config/python ~/.config/pipewire/pipewire.conf.d/
 cp pythonrc ~/.config/python
 cp 99-input-denoising.conf ~/.config/pipewire/pipewire.conf.d/
-
 
 git clone https://aur.archlinux.org/paru.git
 cd paru
@@ -11,11 +10,12 @@ cd ..
 
 sudo sed -i '/BottomUp/s/^#//g ; /\[bin\]/s/^#//g ; /Sudo = doas/s/^#//g' /etc/paru.conf
 
-paru -S wmname geckodriver pavucontrol scrot geany telegram-desktop signal-desktop zathura zathura-pdf-mupdf libva-mesa-driver mesa-vdpau python-pip arc-gtk-theme arc-icon-theme qbittorrent libva-vdpau-driver libvdpau-va-gl gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly libde265 wget gst-plugin-pipewire gstreamer-vaapi adriconf lazygit mesa-utils p7zip mpv yt-dlp linux-tools devtools rsync newsboat lxsession ethtool tlp thermald smartmontools tlp-rdw powertop udisks2 bc librewolf-bin jellyfin-media-player xsecurelock redshift ff2mpv-native-messaging-host-librewolf-git profile-sync-daemon-librewolf tlpui nsxiv github-cli thunderbird gamemode keepassxc mosh gnome-disk-utility arandr go clang prettyping plzip atool bleachbit lynx odt2txt mediainfo bat asp bleachbit tldr xidlehook noto-fonts-emoji unicode-emoji mpd mpc ncmpcpp pipewire-alsa pipewire-pulse xorg-xsetroot xss-lock firefox cmake ninja most libreoffice-fresh-it hunspell-it hyphen-it mythes-it tnftp pacman-contrib xorg-xev neovim-lspconfig pyright ccls pocl vim-airline cp-p deno typescript-language-server arch-audit bash-language-server gst-plugin-va inetutils mtools dosfstools rust-analyzer librewolf-extension-darkreader noise-suppression-for-voice --noconfirm --needed || exit 1
+paru -S wmname geckodriver pavucontrol scrot geany telegram-desktop signal-desktop acpid zathura zathura-pdf-mupdf libva-mesa-driver mesa-vdpau python-pip arc-gtk-theme arc-icon-theme qbittorrent libva-vdpau-driver libvdpau-va-gl gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly libde265 wget gst-plugin-pipewire gstreamer-vaapi adriconf lazygit mesa-utils p7zip mpv yt-dlp linux-tools devtools rsync newsboat lxsession ethtool tlp thermald smartmontools tlp-rdw powertop udisks2 bc librewolf-bin jellyfin-media-player xsecurelock redshift ff2mpv-native-messaging-host-librewolf-git profile-sync-daemon-librewolf tlpui nsxiv github-cli thunderbird gamemode keepassxc mosh gnome-disk-utility arandr go clang prettyping plzip atool bleachbit lynx odt2txt mediainfo bat bleachbit tldr xidlehook noto-fonts-emoji unicode-emoji mpd mpc ncmpcpp pipewire-alsa pipewire-pulse xorg-xsetroot xss-lock firefox cmake ninja most libreoffice-fresh-it hunspell-it hyphen-it mythes-it tnftp pacman-contrib xorg-xev neovim-lspconfig pyright ccls pocl vim-airline cp-p deno typescript-language-server arch-audit bash-language-server gst-plugin-va inetutils mtools dosfstools rust-analyzer noise-suppression-for-voice ttf-liberation xsel adobe-source-sans-fonts ttf-liberation --noconfirm --needed || exit 1
 
 xdg-mime default librewolf.desktop x-scheme-handler/https x-scheme-handler/http text/html image/svg
 xdg-mime default pcmanfm.desktop inode/directory
 xdg-mime default nsxiv.desktop image/jpeg image/png
+xdg-mime default org.pwmt.zathura.desktop application/pdf
 
 sudo chmod go-r /boot /etc/nftables.conf /etc/iptables
 
@@ -23,14 +23,15 @@ sudo sed -i 's/Logo=1/Logo=0/g' /etc/libreoffice/sofficerc
 sudo sed -i 's/COMPRESSLZ=(lzip -c -f)/COMPRESSLZ=(plzip -c -f)/g' /etc/makepkg.conf
 
 sudo systemctl restart --user pipewire.service
-sudo systemctl enable --now thermald tlp
+sudo systemctl enable --now thermald tlp acpid
 sudo systemctl enable paccache.timer
 sudo systemctl disable NetworkManager-dispatcher.service
 
-librewolf -CreateProfile "main /home/orion/.librewolf/main"
+librewolf -CreateProfile "main /home/$(whoami)/.librewolf/main"
 
 git clone https://github.com/arkenfox/user.js
 cp {user.js/user.js,user.js/prefsCleaner.sh,user.js/updater.sh,.mozilla/user-overrides.js} ~/.librewolf/main/
+cp -r ~/.librewolf/main/
 rm -rf user.js ~/.bash* paru
 
 cd ~/.librewolf/main
