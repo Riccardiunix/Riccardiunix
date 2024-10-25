@@ -1,5 +1,5 @@
 *.foreground:#F8F8F2
-*.background:#282A36
+*.background:#000000
 *.cursorColor:#afbfbf
 *.color0:#263640
 *.color8:#4a697d

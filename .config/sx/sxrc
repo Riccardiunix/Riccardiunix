@@ -1,10 +1,11 @@
 #!/bin/sh
+rm -rf ~/.gtkrc-2.0 ~/.icons ~/.npm ~/.python_history ~/.wget-hsts ~/.yarnrc ~/.yarn ~/.electron-gyp ~/.xonotic/lock ~/.net ~/.local/share/go/pkg/mod &
 xrdb ~/.config/Xdefaults &
 urxvtd -q -o -f &
 xset b off &
 xset r rate 200 50 &
 xset s off &
-xidlehook --detect-sleep --not-when-audio --not-when-fullscreen --timer 600 'xsecurelock' '' --timer 300 'systemctl suspend' '' &
+xidlehook --detect-sleep --not-when-audio --not-when-fullscreen --timer 180 'xsecurelock' '' --timer 420 'systemctl sleep' '' &
 xss-lock xsecurelock &
 redshift &
 lxpolkit -s bspwm -e bspwm &

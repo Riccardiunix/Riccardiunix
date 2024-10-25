@@ -41,13 +41,19 @@ super + d
 	webcord
 # steam
 super + s
-	steam-native
+	steam
 # mail
 super + m
 	thunderbird
 # keepassxc
 super + k
 	keepassxc
+# youtube
+super + y
+    freetube
+# jellyfin
+super + j
+    jellyfinmediaplayer
 # audio hotkeys
 #-----------------------------------
 ctrl + Up

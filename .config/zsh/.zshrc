@@ -46,6 +46,7 @@ export SYSMONITOR=btop
 #export LIBVA_DRIVER_NAME=
 #export VDPAU_DRIVER=
 #export NVD_BACKEND=direct
+#export GBM_BACKEND=nvidia-drm
 export VAAPI_MPEG4_ENABLED=true
 export MESA_NO_DITHER=1
 export MOZ_DRM_DEVICE=/dev/dri/card1
@@ -63,11 +64,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export USE_SYMENGINE=1
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-#export __GL_THREADED_OPTIMIZATIONS=1
 #export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/nv
 #export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
 
-export GBM_BACKEND=nvidia-drm
 
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
