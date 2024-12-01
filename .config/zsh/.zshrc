@@ -40,7 +40,7 @@ export TERMINAL=urxvtc
 export _TERMINAL=terminator
 export READER=zathura
 export PAGER=most
-export MANPAGER='most -s'
+export MANPAGER='nvim +Man!'
 export SYSMONITOR=btop
 
 #export LIBVA_DRIVER_NAME=
