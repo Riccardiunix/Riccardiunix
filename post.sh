@@ -33,8 +33,6 @@ cp -r .mozilla/ ~/.librewolf/main/
 rm -rf ~/.bash* paru
 
 cd ~/.librewolf/main
-./prefsCleaner.sh
-./updater.sh
 
 sudo rm /usr/lib/librewolf/crashreporter /usr/lib/librewolf/minidump-analyzer /usr/lib/librewolf/pingsender /usr/lib/firefox/crashreporter /usr/lib/firefox/minidump-analyzer /usr/lib/firefox/pingsender /usr/lib/firefox/browser/features/screenshots@mozilla.org.xpi
 
