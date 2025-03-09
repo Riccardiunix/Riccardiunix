@@ -63,6 +63,7 @@ export MANGOHUD_CONFIG='cpu_temp,gpu_temp,ram,vram,'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export USE_SYMENGINE=1
 export QT_QPA_PLATFORMTHEME=qt5ct
+export GTK_THEME=Arc-Dark
 
 #export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/nv
 #export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
