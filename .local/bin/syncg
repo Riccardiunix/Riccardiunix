@@ -1,3 +1,8 @@
 #!/bin/sh
-rsync -aruPW server@10.0.9.2:/data/Sync/$1 . ||
-rsync -aruPW server@10.0.9.2:/data/Sync/"$1" .
+if ping -c 1 $SERVER_IP &> /dev/null
+then
+    rsync -aruPW server@$SERVER_IP:/data/Sync/$1 . ||
+    rsync -aruPW server@$SERVER_IP:/data/Sync/"$1" .
+else
+  echo "$SERVER_IP not reachable"
+fi

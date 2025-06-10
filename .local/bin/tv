@@ -1,0 +1,3 @@
+#!/bin/sh
+killall xidlehook xss-lock
+xset s off -dpms

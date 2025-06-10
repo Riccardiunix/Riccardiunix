@@ -31,6 +31,8 @@ setopt AUTO_CD
 
 export GREP_COLORS='mt=1;32'
 
+export SERVER_IP=''
+export SERVER_HOSTNAME=''
 export EDITOR=nvim
 export BROWSER=librewolf
 export _BROWSER=firefox
