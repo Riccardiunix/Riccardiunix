@@ -1,3 +1,0 @@
-#!/bin/sh
-sudo wg-quick up wg0 | exit 1
-echo "$SERVER_IP $SERVER_HOSTNAME" | sudo tee /etc/hosts > /dev/null || exit 1

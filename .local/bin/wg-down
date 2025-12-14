@@ -1,3 +1,0 @@
-#!/bin/sh
-sudo wg-quick down wg0 || exit 1
-sudo sed -i "s/$SERVER_IP $SERVER_HOSTNAME" /etc/hosts || exit 1
