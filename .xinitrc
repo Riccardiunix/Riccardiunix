@@ -11,8 +11,8 @@ export HISTFILE=$XDG_DATA_HOME/zsh/histfile
 export GREP_COLORS='mt=1;32'
 
 export EDITOR=nvim
-export BROWSER=librewolf
-export _BROWSER=firefox
+export BROWSER=mullvad-browser
+export _BROWSER=librewolf
 export GUI_EDITOR=geany
 export VISUAL=nvim
 export TERMINAL=urxvtc

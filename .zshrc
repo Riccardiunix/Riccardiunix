@@ -26,4 +26,4 @@ RPROMPT='%F{3}%1~%f'
 
 . "$XDG_CONFIG_HOME"/lf/lfcd.sh
 
-[[ -z "$DISPLAY" && "$XDG_VTNR" -eq 1 ]] && exec sx
+[[ -z "$DISPLAY" && "$XDG_VTNR" -eq 1 ]] && startx
