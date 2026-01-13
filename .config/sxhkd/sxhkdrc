@@ -14,7 +14,7 @@ super + {_,shift +} e
 	{$TERMINAL -e lf, pcmanfm}
 # chat
 super + {_,shift +} c
-	{LANGUAGE=it_IT signal-desktop --no-sandbox, telegram-desktop}
+	{LANGUAGE=it_IT signal-desktop --no-sandbox, Telegram}
 # network
 super + n
 	$TERMINAL -e nmtui
@@ -53,7 +53,7 @@ super + y
     freetube
 # jellyfin
 super + j
-    jellyfinmediaplayer
+    jellyfin-desktop
 # audio hotkeys
 #-----------------------------------
 ctrl + Up
